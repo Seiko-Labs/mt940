@@ -395,7 +395,7 @@ class Statement(Tag):
     # We need the (slow) repeating negative lookahead to search for // so we
     # don't acciddntly include the bank reference in the customer reference.
     (?P<customer_reference>((?!//)[^\n]){0,16})  # 16x Customer Reference
-    (//(?P<bank_reference>.{0,23}))?  # [//23x] Bank Reference
+    (//(?P<bank_reference>.{0,30}))?  # [//23x] Bank Reference
     (\n?(?P<extra_details>.{0,34}))?  # [34x] Supplementary Details
     $'''
 
